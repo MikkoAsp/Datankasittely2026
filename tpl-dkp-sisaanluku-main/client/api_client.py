@@ -13,6 +13,7 @@ def fetch_data(api_url: str) -> list | None:
         print("Palvelin palautti virheen:", e)
     except requests.exceptions.JSONDecodeError:
         print("Ei palautettu JSON")
-    except Exception as e:
-        print("Virhe tapahtui:",e)
+    except requests.exceptions.RequestException as e:
+        print("Virhe tapahtui:", e)
+
     return None
